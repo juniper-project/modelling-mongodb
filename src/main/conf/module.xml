@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Module id="${project.name}" class="org.modelio.juniper.ide.mongodbmodeler.impl.MongoDBModelerModule" binaryversion="3.3.00.9023" version="${project.version}.${buildNumber}.9023" schema-level="2" uid="2e44ec5c-95c1-4642-8784-80e11fc50c90">
+    <ClassPath>
+        <PathEntry path="lib/${project.artifactId}-${project.version}.jar"/>
+        <PathEntry path="lib/commons-lang3-3.1.jar"/>
+        <PathEntry path="lib/audit4modules-0.1.27.jar"/>
+        <PathEntry path="lib/junit-4.8.1.jar"/>
+    </ClassPath>
+    <Profiles>
+        <Profile uid="95868bd4-3dac-4761-8ddf-0f1113a65975" id="MongoDB deployment profile">
+            <Stereotype name="Single" metaclass="BindableInstance" label="Single" uid="663202e5-433e-4354-bf35-3e98c046e6fb">
+                <Icon path="res/icons/single_16.png"/>
+                <Image path="res/icons/single_32.png"/>
+            </Stereotype>
+            <Stereotype name="Primary" metaclass="BindableInstance" label="Primary" uid="34e30437-4cd5-4bc1-b117-e14c8a4a10f0">
+                <Icon path="res/icons/primary.png"/>
+                <Image path="res/icons/primary_32.png"/>
+            </Stereotype>
+            <Stereotype name="Secondary" metaclass="BindableInstance" label="Secondary" uid="efd43a4a-5c10-490a-a2a0-78cb5e0285ef">
+                <Icon path="res/icons/secondary.png"/>
+                <Image path="res/icons/secondary_32.png"/>
+            </Stereotype>
+            <Stereotype name="Shard" metaclass="BindableInstance" label="Shard" uid="86ec691b-1bd2-4cad-b48d-8b00ce3bc8c1">
+                <Icon path="res/icons/shard.png"/>
+                <Image path="res/icons/shard_32.png"/>
+            </Stereotype>
+            <Stereotype name="Router" metaclass="BindableInstance" label="Router" uid="6846e477-1cc5-4aa9-9b33-083b2e2f9771">
+                <Icon path="res/icons/router_database.png"/>
+                <Image path="res/icons/router_32.png"/>
+            </Stereotype>
+            <Stereotype name="ConfigServer" metaclass="BindableInstance" label="ConfigServer" uid="fe683631-9fa9-4cda-81bd-386188009851">
+                <Icon path="res/icons/configServer.png"/>
+                <Image path="res/icons/configServer_32.png"/>
+            </Stereotype>
+            <Stereotype name="Arbiter" metaclass="BindableInstance" label="Arbiter" uid="93c4fc8c-1b07-429d-9f53-3b5e87392668">
+                <Icon path="res/icons/arbiter.png"/>
+                <Image path="res/icons/arbiter_32.png"/>
+            </Stereotype>
+        </Profile>
+        <Profile uid="8d07ab89-1010-4f8c-a185-4677c44b9ffb" id="MongoDB architecture application">
+            <Stereotype name="ReplicaSetMember" metaclass="Class" label="ReplicatSetMember" uid="c9e738de-dfeb-4acd-b4f4-5662d139fdc0">
+                <TagTypes>
+                    <TagType name="priority" uid="6c43b574-5621-447b-aa8c-c61d026b89c1" label="priority" is-hidden="false"/>
+                    <TagType name="hidden" uid="d10a1624-f7bd-462f-82f8-4f6670e7ebb1" label="hidden" is-hidden="false"/>
+                    <TagType name="buildIndexes" uid="142ef1d9-3d78-47d0-af8c-47166bcc36ca" label="buildIndexes" is-hidden="false"/>
+                    <TagType name="votes" uid="236536e9-5a96-4007-815e-995e089fd17f" label="votes" is-hidden="false"/>
+                </TagTypes>
+            </Stereotype>
+            <Stereotype name="MongoDBServer" metaclass="Class" label="MongoDBServer" uid="e28a4eee-01bb-4c25-a30d-765eb9070b22">
+                <Icon path="res/icons/mongodb_server.png"/>
+                <Image path="res/icons/mongoDB_server_48.png"/>
+            </Stereotype>
+        </Profile>
+        <Profile uid="2da5b305-036e-43c4-addd-b817b16b00f1" id="MongoDB data modelling profile">
+            <Stereotype name="Index" metaclass="Class" label="Index" uid="331e421a-5a13-4ae4-ad5b-ddbdea1d1ff2">
+                <Icon path="res/icons/index.png"/>
+                <Image path="res/icons/index_32.png"/>
+                <TagTypes>
+                    <TagType name="background" uid="ca15f13b-4ef2-4e6e-8d91-1fee19b3a662" label="background" is-hidden="false"/>
+                    <TagType name="name" uid="f8d76f9f-846b-4382-9f16-4b048a6e4bde" label="name" is-hidden="false"/>
+                    <TagType name="dropduplicates" uid="588e56d4-f86c-40da-85b3-57f84e750c6f" label="dropduplicates" is-hidden="false"/>
+                    <TagType name="sparse" uid="719aaa57-d1c2-48a6-ab65-21fd07867a01" label="sparse" is-hidden="false"/>
+                    <TagType name="expireAfterSeconds" uid="1d3aef09-6e41-4ee7-8f51-f48b33b9dd6b" label="expireAfterSeconds" is-hidden="false"/>
+                    <TagType name="unique" uid="62ba00e1-f897-4682-b4a9-68b402b435d8" label="unique" is-hidden="false"/>
+                    <TagType name="version" uid="d790204a-415a-4196-a127-55c05e40170f" label="version" is-hidden="false"/>
+                    <TagType name="2dsphereIndexVersion" uid="5ba3ab54-645f-4895-9bcf-326a1525f1f8" label="2dsphereIndexVersion" is-hidden="false"/>
+                </TagTypes>
+            </Stereotype>
+            <Stereotype name="ShardingKey" metaclass="Class" label="ShardingKey" uid="1853662f-64e9-490c-8ebb-583d4cce3fc9">
+                <Icon path="res/icons/sharding_key.png"/>
+                <Image path="res/icons/sharding_key_32.png"/>
+            </Stereotype>
+            <Stereotype name="HashedShardingKey" metaclass="Class" label="HashedShardingKey" uid="0633c2ab-4fee-4108-ac48-ee2e437187b6">
+                <TagTypes>
+                    <TagType name="numInitialChunks" uid="6523fd68-31e1-4752-beb8-6aa3e6ec6cc2" label="numInitialChunks" is-hidden="false"/>
+                </TagTypes>
+            </Stereotype>
+            <Stereotype name="Sharding" metaclass="Dependency" label="Sharding" uid="504e8f89-b702-4658-a07e-86f276523c87">
+                <TagTypes>
+                    <TagType name="splitAt" uid="e9fa71a4-9264-47d3-a859-20e87ab6c34b" label="splitAt" is-hidden="false"/>
+                </TagTypes>
+            </Stereotype>
+            <Stereotype name="Indexing" metaclass="Dependency" label="Indexing" uid="db65f681-a3c2-44ff-89f7-5569900f1295">
+                <TagTypes>
+                    <TagType name="description" uid="0ca13cdf-d6c3-4312-9958-8380fb738199" label="description" is-hidden="false"/>
+                </TagTypes>
+            </Stereotype>
+            <Stereotype name="Database" metaclass="Package" label="Database" uid="258898a3-5316-444b-a691-53fa0bbc5d88">
+                <Icon path="res/icons/database.png"/>
+                <Image path="res/icons/database_32.png"/>
+            </Stereotype>
+            <Stereotype name="Collection" metaclass="Package" label="Collection" uid="7035f202-bafe-46e3-887d-8a51c268a061">
+                <Icon path="res/icons/collection.png"/>
+                <Image path="res/icons/collection_32.png"/>
+            </Stereotype>
+            <Stereotype name="Document" metaclass="Class" label="Document" uid="990ad953-346f-4137-bbdf-ff65b20609ba">
+                <Icon path="res/icons/document.png"/>
+                <Image path="res/icons/document_32.png"/>
+            </Stereotype>
+        </Profile>
+        <Profile uid="94624fef-b913-434c-9a30-24e8d7fe80e9" id="Diagrams">
+            <Stereotype name="MongoDBDataModelDiagram" metaclass="StaticDiagram" is-hidden="false" label="DataModelDiagram" uid="913de528-f67c-4b0c-a0ef-28182e28a3d7">
+                <Icon path="res/icons/database_diagram_16.png"/>
+                <Image path="res/icons/database_diagram_32.png"/>
+            </Stereotype>
+        </Profile>
+    </Profiles>
+    <Parameters/>
+    <Gui>
+        <Commands>
+            <Command id="Create Storage program" label="Create Storage program" tooltip="Create Storage program" image="res/icons/mongodb_server.png" group="Elements" modify-model="true" group-image="res/icons/elements16.png">
+                <Scope metaclass="Package" stereotype="SoftwareArchitectureModel"/>
+                <Handler class="org.modelio.juniper.ide.mongodbmodeler.command.explorer.CreateStorageProgramCommand"/>
+            </Command>
+            <Command id="Create Data model" label="Create Data model" tooltip="Create Data model" image="res/icons/datamodel_16.png" group="Elements" modify-model="true" group-image="res/icons/elements16.png">
+                <Scope metaclass="Class" stereotype="MongoDBServer"/>
+                <Handler class="org.modelio.juniper.ide.mongodbmodeler.command.explorer.CreateDataModelCommand"/>
+            </Command>
+            <Command id="Create Database" label="Create Database" tooltip="Create Database" image="res/icons/database.png" group="Elements" modify-model="true" group-image="res/icons/elements16.png">
+                <Scope metaclass="Package"/>
+                <Handler class="org.modelio.juniper.ide.mongodbmodeler.command.explorer.CreateDatabaseCommand"/>
+            </Command>
+            <Command id="Create Collection" label="Create Collection" tooltip="Create Collection" image="res/icons/collection.png" group="Elements" modify-model="true" group-image="res/icons/elements16.png">
+                <Scope metaclass="Package"/>
+                <Handler class="org.modelio.juniper.ide.mongodbmodeler.command.explorer.CreateCollectionCommand"/>
+            </Command>
+            <Command id="Create Document" label="Create Document" tooltip="Create Document" image="res/icons/document.png" group="Elements" modify-model="true" group-image="res/icons/elements16.png">
+                <Scope metaclass="Package" stereotype="Collection"/>
+                <Handler class="org.modelio.juniper.ide.mongodbmodeler.command.explorer.CreateDocumentCommand"/>
+            </Command>
+            <Command id="Create Index" label="Create Index" tooltip="true" image="res/icons/index.png" group="Elements" modify-model="true" group-image="res/icons/elements16.png">
+                <Scope metaclass="Package" stereotype="Collection"/>
+                <Handler class="org.modelio.juniper.ide.mongodbmodeler.command.explorer.CreateIndexCommand"/>
+            </Command>
+            <Command id="Create Index dependency" label="Create Index dependency" tooltip="Create Index dependency" image="res/icons/dependency.png" group="Elements" modify-model="true" group-image="res/icons/elements16.png">
+                <Scope metaclass="ModelElement"/>
+                <Handler class="org.modelio.juniper.ide.mongodbmodeler.command.explorer.CreateIndexDependencyCommand"/>
+            </Command>
+            <Command id="Create Sharding key" label="Create Sharding key" tooltip="Create Sharding key" image="res/icons/sharding_key.png" group="Elements" modify-model="true" group-image="res/icons/elements16.png">
+                <Scope metaclass="Package" stereotype="Collection"/>
+                <Handler class="org.modelio.juniper.ide.mongodbmodeler.command.explorer.CreateShardingKeyCommand"/>
+            </Command>
+            <Command id="Create Sharding key dependency" label="Create Sharding key dependency" tooltip="Create Sharding key dependency" image="res/icons/dependency.png" group="Elements" modify-model="true" group-image="res/icons/elements16.png">
+                <Scope metaclass="Package" stereotype="DataModel"/>
+                <Handler class="org.modelio.juniper.ide.mongodbmodeler.command.explorer.CreateShardingKeyDependencyCommand"/>
+            </Command>
+            <Command id="Create MongoDB data diagram" label="Create MongoDB data diagram" tooltip="Create MongoDB data diagram" image="res/icons/database_diagram_16.png" group="Diagrams" modify-model="true" group-image="res/icons/diagrams_16.png">
+                <Scope metaclass="ModelElement"/>
+                <Handler class="org.modelio.juniper.ide.mongodbmodeler.command.explorer.CreateMongodbDataDiagramCommand"/>
+            </Command>
+            <Command id="Generate single host deployment model" label="Generate single host deployment model" tooltip="Generate single host deployment model" image="res/icons/singledatabase_16.png" group="Model transformations" modify-model="true" group-image="res/icons/transformation16.png">
+                <Scope metaclass="Class" stereotype="MongoDBServer"/>
+                <Handler class="org.modelio.juniper.ide.mongodbmodeler.command.explorer.GenerateSingleHostDeploymentCommand"/>
+            </Command>
+            <Command id="Generate replicated host deployment model" label="Generate replicated host deployment model" tooltip="Generate replicated host deployment model" image="res/icons/databases_16.png" group="Model transformations" modify-model="true" group-image="res/icons/transformation16.png">
+                <Scope metaclass="Class" stereotype="MongoDBServer"/>
+                <Handler class="org.modelio.juniper.ide.mongodbmodeler.command.explorer.GenerateReplicatedHostDeploymentCommand"/>
+            </Command>
+            <Command id="Generate sharded host deployment model" label="Generate sharded host deployment model" tooltip="Generate sharded host deployment model" image="res/icons/shard_databases_16.png" group="Model transformations" modify-model="true" group-image="res/icons/transformation16.png">
+                <Scope metaclass="Class" stereotype="MongoDBServer"/>
+                <Handler class="org.modelio.juniper.ide.mongodbmodeler.command.explorer.GenerateShardedHostDeploymentCommand"/>
+            </Command>
+            <Command id="Generate deployment script" label="Generate deployment script..." tooltip="Generate deployment script..." image="res/icons/database-settings-icon.png" group="Code generators" modify-model="false" group-image="res/icons/gen_export_16.png">
+                <Scope metaclass="Package"/>
+                <Handler class="org.modelio.juniper.ide.mongodbmodeler.command.explorer.GenerateDeploymentScriptCommand"/>
+            </Command>
+            <Command id="Generate database schema" label="Generate database schema..." tooltip="Generate database schema..." image="res/icons/composition_database_3.png" group="Code generators" modify-model="false" group-image="res/icons/gen_export_16.png">
+                <Scope metaclass="Package"/>
+                <Handler class="org.modelio.juniper.ide.mongodbmodeler.command.explorer.GenerateSchemaInitializationScriptCommand"/>
+            </Command>
+            <Command id="Generate code" label="Generate code" tooltip="true" image="res/icons/generation.png" group="Code generators" modify-model="false" group-image="res/icons/gen_export_16.png">
+                <Scope metaclass="Package" stereotype="JUNIPERModel"/>
+                <Handler class="org.modelio.juniper.ide.mongodbmodeler.command.explorer.GenerateCodeCommand"/>
+            </Command>
+            <Command id="Generate MongoDB data model" label="Generate MongoDB data model" tooltip="true" image="res/icons/generation.png" group="Data model generators" modify-model="true" group-image="res/icons/gen_export_16.png">
+                <Scope metaclass="Package" stereotype="DataModel"/>
+                <Handler class="org.modelio.juniper.ide.mongodbmodeler.command.explorer.GenerateMongoDBDataModelCommand"/>
+            </Command>
+        </Commands>
+        <Tools>
+            <Tool id="CreateDatabaseTool" label="Create Database" tooltip="Create Database" image="res/icons/database.png">
+                <Scope-source metaclass="Package" stereotype="DataModel"/>
+                <Handler class="org.modelio.juniper.ide.mongodbmodeler.command.diagram.util.SimpleBoxTool">
+                    <HParameter name="metaclass" value="Package"/>
+                    <HParameter name="ownerStereotypeModule" value="PersistentProfile"/>
+                    <HParameter name="ownerStereotype" value="DataModel"/>
+                    <HParameter name="type" value="script"/>
+                    <HParameter name="path" value="/res/scripts/createDatabase.py"/>
+                </Handler>
+            </Tool>
+            <Tool id="CreateCollectionTool" label="Create Collection" tooltip="Create Collection" image="res/icons/collection.png">
+                <Scope-source metaclass="Package" stereotype="Database"/>
+                <Handler class="org.modelio.juniper.ide.mongodbmodeler.command.diagram.util.SimpleBoxTool">
+                    <HParameter name="metaclass" value="Package"/>
+                    <HParameter name="ownerStereotypeModule" value="MongoDBModeler"/>
+                    <HParameter name="ownerStereotype" value="Database"/>
+                    <HParameter name="type" value="script"/>
+                    <HParameter name="path" value="/res/scripts/createCollection.py"/>
+                </Handler>
+            </Tool>
+            <Tool id="CreateDocumentTool" label="Create Document" tooltip="Create Document" image="res/icons/document.png">
+                <Scope-source metaclass="Package" stereotype="Collection"/>
+                <Handler class="org.modelio.juniper.ide.mongodbmodeler.command.diagram.util.SimpleBoxTool">
+                    <HParameter name="metaclass" value="Class"/>
+                    <HParameter name="ownerStereotypeModule" value="MongoDBModeler"/>
+                    <HParameter name="ownerStereotype" value="Collection"/>
+                    <HParameter name="type" value="script"/>
+                    <HParameter name="path" value="/res/scripts/createDocument.py"/>
+                </Handler>
+            </Tool>
+            <Tool id="CreateIndexTool" label="Create Index" tooltip="Create Index" image="res/icons/index.png">
+                <Scope-source metaclass="Package" stereotype="Collection"/>
+                <Handler class="org.modelio.juniper.ide.mongodbmodeler.command.diagram.util.SimpleBoxTool">
+                    <HParameter name="metaclass" value="Class"/>
+                    <HParameter name="ownerStereotypeModule" value="MongoDBModeler"/>
+                    <HParameter name="ownerStereotype" value="Collection"/>
+                    <HParameter name="type" value="script"/>
+                    <HParameter name="path" value="/res/scripts/createIndex.py"/>
+                </Handler>
+            </Tool>
+            <Tool id="CreateIndexDependencyTool" label="Create Index dependency" tooltip="Create Index dependency" image="res/icons/dependency.png">
+                <Scope-source metaclass="Class" stereotype="Index"/>
+                <Scope-target metaclass="Attribute"/>
+                <Handler class="org.modelio.juniper.ide.mongodbmodeler.command.diagram.util.SimpleLinkTool">
+                    <HParameter name="metaclass" value="Dependency"/>
+                    <HParameter name="type" value="script"/>
+                    <HParameter name="scriptPath" value="/res/scripts/createIndexDependencyTool.py"/>
+                </Handler>
+            </Tool>
+            <Tool id="CreateShardingKeyTool" label="Create Sharding key" tooltip="Create Sharding key" image="res/icons/sharding_key.png">
+                <Scope-source metaclass="Package" stereotype="Collection"/>
+                <Handler class="org.modelio.juniper.ide.mongodbmodeler.command.diagram.util.SimpleBoxTool">
+                    <HParameter name="metaclass" value="Class"/>
+                    <HParameter name="ownerStereotypeModule" value="MongoDBModeler"/>
+                    <HParameter name="ownerStereotype" value="Collection"/>
+                    <HParameter name="type" value="script"/>
+                    <HParameter name="path" value="/res/scripts/createShardingKey.py"/>
+                </Handler>
+            </Tool>
+            <Tool id="CreateShardingKeyDependencyTool" label="Create Sharding dependency" tooltip="Create Sharding key dependency" image="res/icons/dependency.png">
+                <Scope-source metaclass="Class" stereotype="ShardingKey"/>
+                <Scope-target metaclass="Attribute"/>
+                <Handler class="org.modelio.juniper.ide.mongodbmodeler.command.diagram.util.SimpleLinkTool">
+                    <HParameter name="metaclass" value="Dependency"/>
+                    <HParameter name="type" value="script"/>
+                    <HParameter name="scriptPath" value="/res/scripts/createShardingDependencyTool.py"/>
+                </Handler>
+            </Tool>
+        </Tools>
+        <ContextualMenu>
+            <CommandRef refid="Create Storage program"/>
+            <CommandRef refid="Create Data model"/>
+            <CommandRef refid="Create Database"/>
+            <CommandRef refid="Create Collection"/>
+            <CommandRef refid="Create Document"/>
+            <CommandRef refid="Create Index"/>
+            <CommandRef refid="Create Index dependency"/>
+            <CommandRef refid="Create Sharding key"/>
+            <CommandRef refid="Create Sharding key dependency"/>
+            <CommandRef refid="Create MongoDB data diagram"/>
+            <CommandRef refid="Generate single host deployment model"/>
+            <CommandRef refid="Generate replicated host deployment model"/>
+            <CommandRef refid="Generate sharded host deployment model"/>
+            <CommandRef refid="Generate deployment script"/>
+            <CommandRef refid="Generate database schema"/>
+            <CommandRef refid="Generate code"/>
+            <CommandRef refid="Generate MongoDB data model"/>
+        </ContextualMenu>
+        <Diagrams>
+            <DiagramType base-diagram="StaticDiagram" stereotype="MongoDBDataModelDiagram">
+                <Palette keepBasePalette="true">
+                    <ToolRef refid="CreateDatabaseTool" group="Noeuds"/>
+                    <ToolRef refid="CreateCollectionTool" group="Noeuds"/>
+                    <ToolRef refid="CreateDocumentTool" group="Noeuds"/>
+                    <ToolRef refid="CreateIndexTool" group="Noeuds"/>
+                    <ToolRef refid="CreateIndexDependencyTool" group="Links"/>
+                    <ToolRef refid="CreateShardingKeyTool" group="Noeuds"/>
+                    <ToolRef refid="CreateShardingKeyDependencyTool" group="Links"/>
+                    <ToolRef refid="CREATE_ATTRIBUTE" group="Elements"/>
+                    <ToolRef refid="CREATE_ASSOCIATION" group="Links"/>
+                    <ToolRef refid="CREATE_COMPOSITION" group="Links"/>
+                </Palette>
+                <Handler class="StandardCustomizer"/>
+            </DiagramType>
+        </Diagrams>
+        <Views/>
+    </Gui>
+    <Dependencies>
+        <Required name="JuniperIDE" version="0.2.1.9023"/>
+    </Dependencies>
+    <Resources/>
+</Module>
